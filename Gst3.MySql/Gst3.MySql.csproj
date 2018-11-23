@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39BDE288-11D8-44A8-B1C8-5F36A11ED9DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gst3.MySql</RootNamespace>
+    <AssemblyName>Gst3.MySql</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Desktop\Rm4\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gst3MySqlWrapper.cs" />
+    <Compile Include="Instructions\BetweenExp.cs" />
+    <Compile Include="Instructions\EqColumnsExp.cs" />
+    <Compile Include="Instructions\EqExp.cs" />
+    <Compile Include="Instructions\ExistsExp.cs" />
+    <Compile Include="Instructions\Exp.cs" />
+    <Compile Include="Instructions\InExp.cs" />
+    <Compile Include="Instructions\JunctionExp.cs" />
+    <Compile Include="Instructions\LgExp.cs" />
+    <Compile Include="Instructions\LikeExp.cs" />
+    <Compile Include="Instructions\SelectAgregate.cs" />
+    <Compile Include="Instructions\SqlCreate.cs" />
+    <Compile Include="Instructions\SqlCreateColumn.cs" />
+    <Compile Include="Instructions\SqlCreateIndex.cs" />
+    <Compile Include="Instructions\SqlCreateTable.cs" />
+    <Compile Include="Instructions\SqlDelete.cs" />
+    <Compile Include="Instructions\SqlExp.cs" />
+    <Compile Include="Instructions\SqlIdentifier.cs" />
+    <Compile Include="Instructions\SqlInsert.cs" />
+    <Compile Include="Instructions\SqlQuery.cs" />
+    <Compile Include="Instructions\SqlUpdate.cs" />
+    <Compile Include="Instructions\SubExp.cs" />
+    <Compile Include="ISqlDialect.cs" />
+    <Compile Include="ISqlInstruction.cs" />
+    <Compile Include="MySqlSqlDialect.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
